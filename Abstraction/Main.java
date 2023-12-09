@@ -29,5 +29,5 @@ public class Main {
 // public class Main {
 //     public static void main(String[] args) {
 //         Animal myObj = new Animal(); // animal class is abstract class not create a object
-//     } // throw error :- Animal is abstract; cannot be instantiated
+//     } // error :- Animal is abstract; cannot be instantiated
 // }
