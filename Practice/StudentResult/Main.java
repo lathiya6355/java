@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class std {
+class Student {
     int r_no;
     String name;
     int mark;
 
-    public std(int r_no, String name, int mark) {
+    public Student(int r_no, String name, int mark) {
         this.r_no = r_no;
         this.name = name;
         this.mark = mark;
@@ -48,20 +48,20 @@ class std {
     }
 
 }
-public class Student {
+public class Main {
     public static void main(String[] args) {
-        var s1 = new std(1, "Prince", 467);
-        var s2 = new std(2, "Hiren", 428);
-        var s3 = new std(3, "Mehul", 180);
-        var s4 = new std(4, "Chetan", 380);
-        var s5 = new std(5, "Jaydip", 384);
-        var s6 = new std(6, "Paras", 450);
-        var s7 = new std(7, "Dhruvil", 221);
-        var s8 = new std(8, "rutvik", 250);
-        var s9 = new std(9, "Keyur", 299);
-        var s10 = new std(10, "Raj", 299);
+        Student s1 = new Student(1, "Prince", 467);
+        Student s2 = new Student(2, "Hiren", 428);
+        Student s3 = new Student(3, "Mehul", 180);
+        Student s4 = new Student(4, "Chetan", 380);
+        Student s5 = new Student(5, "Jaydip", 384);
+        Student s6 = new Student(6, "Paras", 450);
+        Student s7 = new Student(7, "Dhruvil", 221);
+        Student s8 = new Student(8, "rutvik", 250);
+        Student s9 = new Student(9, "Keyur", 299);
+        Student s10 = new Student(10, "Raj", 299);
 
-        List<std> stdList = new ArrayList<>();
+        List<Student> stdList = new ArrayList<>();
         stdList.add(s1);
         stdList.add(s2);
         stdList.add(s3);
@@ -73,8 +73,8 @@ public class Student {
         stdList.add(s9);
         stdList.add(s10);
 
-        for (std student : stdList) {
-            System.out.println("Student ID: " + student.getR_no());
+        for (Student student : stdList) {
+            System.out.println("Student Roll Number: " + student.getR_no());
             System.out.println("Student Name: " + student.getName());
             System.out.println("Student Marks: " + student.getMark());
             System.out.println("Grade: " + student.calculateGrade());
@@ -83,10 +83,10 @@ public class Student {
 
         int minMarks = Integer.MAX_VALUE;
         int maxMarks = Integer.MIN_VALUE;
-        std studentWithMinMarks = null;
-        std studentWithMaxMarks = null;
+        Student studentWithMinMarks = null;
+        Student studentWithMaxMarks = null;
 
-        for (std student : stdList) {
+        for (Student student : stdList) {
             int marks = student.getMark();
             if (marks < minMarks) {
                 minMarks = marks; // Update minimum marks if found
@@ -113,17 +113,18 @@ public class Student {
             System.out.println("Student Name: " + studentWithMaxMarks.getName());
             System.out.println("Student Marks: " + studentWithMaxMarks.getMark());
         }
-// same marks student count
-        List<List<std>> sameMarksStudents = new ArrayList<>();
+
+        // same marks student count
+        List<List<Student>> sameMarksStudents = new ArrayList<>();
 
         for (int i = 0; i < stdList.size() - 1; i++) {
-            std currentStudent = stdList.get(i);
+            Student currentStudent = stdList.get(i);
             int currentMarks = currentStudent.getMark();
-            List<std> sameMarks = new ArrayList<>();
+            List<Student> sameMarks = new ArrayList<>();
             sameMarks.add(currentStudent);
 
             for (int j = i + 1; j < stdList.size(); j++) {
-                std nextStudent = stdList.get(j);
+                Student nextStudent = stdList.get(j);
                 int nextMarks = nextStudent.getMark();
                 if (currentMarks == nextMarks) {
                     sameMarks.add(nextStudent);
@@ -136,8 +137,8 @@ public class Student {
         }
         System.out.println("\n\nSame mark student Count = " + sameMarksStudents.size());
         System.out.println("===================Same Marks Student Details=======================");
-        for (List<std> students : sameMarksStudents) {
-            for (std student : students) {
+        for (List<Student> students : sameMarksStudents) {
+            for (Student student : students) {
                 System.out.println("Student ID: " + student.getR_no());
                 System.out.println("Student Name: " + student.getName());
                 System.out.println("Student Marks: " + student.getMark());
