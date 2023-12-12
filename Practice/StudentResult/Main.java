@@ -50,7 +50,7 @@ class Student {
 }
 public class Main {
     public static void main(String[] args) {
-        Student s1 = neiw Student(1, "Prince", 467);
+        Student s1 = new Student(1, "Prince", 467);
         Student s2 = new Student(2, "Hiren", 428);
         Student s3 = new Student(3, "Mehul", 180);
         Student s4 = new Student(4, "Chetan", 380);
