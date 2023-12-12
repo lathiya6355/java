@@ -1,6 +1,8 @@
 class Rectangle{
     private int length;
     private int breadth;
+    public int width;
+    public int x;
 
     Rectangle(int length, int breadth) {
         this.length = length;
@@ -10,6 +12,10 @@ class Rectangle{
     public void getArea() {
         int area = length * breadth;
         System.out.println("Area = " + area);
+    }
+
+    public boolean intersects(Rectangle brickRect) {
+        return false;
     }
 }
 
